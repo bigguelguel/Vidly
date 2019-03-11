@@ -1,0 +1,20 @@
+﻿@model List<Vidly.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1> Customers</h1>
+<table class="table">
+    <tr>
+        <th><h3> Customer</h3></th>
+    </tr>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td><h4>@Html.ActionLink(customer.Name, string.Format("Details/{0}",customer.Id),"Customers")/@customer.Id</h4></td>
+        </tr>
+    }
+</table>
+
+
